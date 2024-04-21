@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CALCULATOR</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main">
+        <div>
+            <input type="text" name="display" id="display">
+            <!-- <p class="error" id="error">Error</p> -->
+        </div>
+        <div class="casio">
+            <h3>CASIO</h3>
+        </div>
+        <div>
+            <button onclick="clearDisplay()">C</button>
+            <button onclick="solve('%')">%</button>
+            <button onclick="backspace()">←</button>
+            <button onclick="solve('/')">/</button>
+        </div>
+        <div>
+            <button onclick="solve('7')">7</button>
+            <button onclick="solve('8')">8</button>
+            <button onclick="solve('9')">9</button>
+            <button onclick="solve('*')">*</button>
+        </div>
+        <div>
+            <button onclick="solve('4')">4</button>
+            <button onclick="solve('5')">5</button>
+            <button onclick="solve('6')">6</button>
+            <button onclick="solve('-')">-</button>
+        </div>
+        <div>
+            <button onclick="solve('1')">1</button>
+            <button onclick="solve('2')">2</button>
+            <button onclick="solve('3')">3</button>
+            <button onclick="solve('+')">+</button>
+        </div>
+        <div>
+            <button onclick="solve('00')">00</button>
+            <button onclick="solve('0')">0</button>
+            <button onclick="solve('.')">.</button>
+            <button onclick="result()">=</button>
+        </div>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

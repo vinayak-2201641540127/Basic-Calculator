@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Compression Example</title>
+<style>
+    #originalText {
+        width: 300px;
+        height: 150px;
+    }
+</style>
+</head>
+<body>
+    <textarea id="originalText">Type something here...</textarea><br>
+    <button onclick="compressAndRestore()">Compress / Restore</button>
+
+    <script>
+        function compressAndRestore() {
+            var originalText = document.getElementById("originalText").value;
+            var compressedText = compress(originalText);
+
+            // For demonstration, you can log the compressed text
+            console.log("Compressed Text: ", compressedText);
+
+            // Decompress the text and restore
+            var restoredText = decompress(compressedText);
+            document.getElementById("originalText").value = restoredText;
+        }
+
+        function compress(text) {
+            // This is a simplistic example, you might want to use a more robust compression algorithm
+            // This example uses JavaScript's built-in compression functions
+            var compressedText = LZString.compressToBase64(text);
+            return compressedText;
+        }
+
+        function decompress(compressedText) {
+            var restoredText = LZString.decompressFromBase64(compressedText);
+            return restoredText;
+        }
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lz-string/1.4.4/lz-string.min.js"></script>
+</body>
+</html>
